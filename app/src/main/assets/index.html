@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://signin.kontomatik.com/assets/signin-widget.js"></script>
+</head>
+<body>
+<h1>Kontomatik Widget</h1>
+<div id="kontomatik"></div>
+<script type="text/javascript">
+embedKontomatik({
+    divId: 'kontomatik',
+    client: 'YOUR_CLIENT_ID',// replace it with your assigned client id
+    showFavicons: true,
+    country: 'all',
+    onSuccess: function(target, sessionId, sessionIdSignature) {
+        Android.showToast('sessionId=' + sessionId + '&sessionIdSignature=' + sessionIdSignature);
+        document.getElementById('kontomatik').innerHTML = '<div>Signed in successfully</div><button onClick="location.reload();">Restart</button>';
+    }
+});
+</script>
+</body>
+</html>
