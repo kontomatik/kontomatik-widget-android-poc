@@ -15,8 +15,8 @@ embedKontomatik({
     client: 'YOUR_CLIENT_ID',// replace it with your assigned client id
     showFavicons: true,
     country: 'all',
-    onSuccess: function(target, sessionId, sessionIdSignature) {
-        Android.showToast('sessionId=' + sessionId + '&sessionIdSignature=' + sessionIdSignature);
+    onSuccess: function(target, sessionId, sessionIdSignature, options) {
+        Android.showToast('sessionId=' + sessionId + '&sessionIdSignature=' + sessionIdSignature + '&officialName=' + options.officialName);
         document.getElementById('kontomatik').innerHTML = '<div>Signed in successfully</div><button onClick="location.reload();">Restart</button>';
     }
 });
