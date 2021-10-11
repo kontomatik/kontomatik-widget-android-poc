@@ -15,6 +15,7 @@ public class MyWebChromeClient extends WebChromeClient {
         WebView newWebView = new WebView(view.getContext());
         WebSettings webSettings = newWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
 
         final Dialog dialog = new Dialog(view.getContext());
         dialog.setContentView(newWebView);
